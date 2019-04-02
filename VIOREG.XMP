@@ -1,0 +1,105 @@
+Microsoft Customer Support Engineer remarks:
+The function VIOREGISTER () is not broken, here is a sample code
+which uses the function VIOREGISTER () to register VIOPRTSC (). The
+VIOPRTSC () is defined by the user in a .dll file.
+
+You have to use 'implib' utility to produce a .lib file for resolving
+identifier names. For this example the correct syntax of the command is :
+
+              implib test.lib test.def
+
+     ------------------------------------------------
+
+/* This is a sample program to show the use of function VIOREGISTER ().
+The VIOREGISTER () call is used to register the function VIOPRTSC (), which
+is defined by the user in dynamic link library.
+
+MASK1 enables the mask for VIOPRTSC ()      */
+
+#define   MASK1   0x01000000
+#define   MASK2   0x00000000
+
+#include "subcalls.h"
+
+extern unsigned far pascal VIOPRTSC (unsigned);
+
+main() {
+
+/*  test is the name of dynamic link library file   */
+
+        VIOREGISTER ((char far *) "test", (char far *) "test",
+              (unsigned long) MASK1, (unsigned long) MASK2) ;
+        VIOPRTSC ((unsigned) 1) ;
+    }
+
+----------------------------------------------------------------------
+
+/*   this is a dynamic link library file to test VIOREGISTER call for
+     VIOPRTSC () .*/
+
+#define ADDRESSING far
+#define CALLING pascal
+#define CONVENTION ADDRESSING CALLING
+#include "doscalls.h"
+
+/*   user defined VIOPRTSC ()   */
+
+unsigned CONVENTION VIOPRTSC (j)
+unsigned j ;
+{
+int i ;
+
+/*   test message to verify the working of this function   */
+
+   DOSWRITE (1, "This is from DLL", sizeof ("This is from DLL"), &i) ;
+
+}
+
+
+/*   compiler emits _acrtused as an external to pull in crt0.obj that
+     defines _astart and calls _main. Add a dummy so crt0 is not pulled
+     in.  */
+
+#undef CALLING
+#define CALLING cdecl
+
+int CONVENTION _acrtused(){} ;
+
+
+/*   the start up routine must be called _astart and it must return
+     success or failure. Return success.  */
+
+int CONVENTION _astart() {
+    return 1 ;
+    }
+------------------------------------------------------------------------
+
+This is the make file for simple.c
+
+simple.obj : simple.c
+     cl -c -AH -G2 -Os -Zp simple.c
+
+simple.exe : simple.obj simple.def
+     link simple, simple/co, simple/map, test.lib llibc5.lib doscalls.lib, simple.def
+----------------------------------------------------------------------------------
+
+This is the make file test.c
+
+test.obj : test.c
+     cl -c -Alnu -G2s  test.c
+
+test.dll : test.obj test.def
+     link test.obj, test.dll, test.map/map, llibc5.lib doscalls.lib, test.def
+-----------------------------------------------------------------------------
+This is test.def file which is used to produce test.lib file using IMPLIB
+utility.
+
+LIBRARY       test
+
+DESCRIPTION     'Test for VioRegister'
+
+EXPORTS
+        VIOPRTSC @ 1
+
+----------------------------------------------------------------------------
+

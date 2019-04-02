@@ -1,0 +1,172 @@
+
+
+ VIOINIT
+
+ Start     Length     Name                   Class
+ 0001:0000 0002CH     VIOINIT_TEXT           CODE
+ 0001:002C 00531H     _TEXT                  CODE
+ 0001:055E 00000H     C_ETEXT                ENDCODE
+ 0002:0000 00042H     NULL                   BEGDATA
+ 0002:0042 00192H     _DATA                  DATA
+ 0002:01D4 0000EH     CDATA                  DATA
+ 0002:01E2 00000H     XIB                    DATA
+ 0002:01E2 00000H     XI                     DATA
+ 0002:01E2 00000H     XIE                    DATA
+ 0002:01E2 00000H     XPB                    DATA
+ 0002:01E2 00000H     XP                     DATA
+ 0002:01E2 00000H     XPE                    DATA
+ 0002:01E2 00000H     XCB                    DATA
+ 0002:01E2 00000H     XC                     DATA
+ 0002:01E2 00000H     XCE                    DATA
+ 0002:01E2 00000H     CONST                  CONST
+ 0002:01E2 00008H     HDR                    MSG
+ 0002:01EA 000FAH     MSG                    MSG
+ 0002:02E4 00002H     PAD                    MSG
+ 0002:02E6 00001H     EPAD                   MSG
+ 0002:02E8 00000H     _BSS                   BSS
+ 0002:02E8 00000H     XOB                    BSS
+ 0002:02E8 00000H     XO                     BSS
+ 0002:02E8 00000H     XOE                    BSS
+ 0002:02F0 00A00H     STACK                  STACK
+ 0003:0000 00285H     $$TYPES                DEBTYP
+ 0004:0000 0002DH     $$SYMBOLS              DEBSYM
+ 0005:0000 00001H      SRCLINES              DEBSRC
+
+ Origin   Group
+ 0002:0   DGROUP
+
+  Address         Publics by Name
+
+ 0000:0000  Imp  DOSCLOSE             (DOSCALLS.59)
+ 0000:0000  Imp  DOSEXIT              (DOSCALLS.5)
+ 0000:0000  Imp  DOSGETMACHINEMODE    (DOSCALLS.49)
+ 0000:0000  Imp  DOSGETVERSION        (DOSCALLS.92)
+ 0000:0000  Imp  DOSQHANDTYPE         (DOSCALLS.77)
+ 0000:0000  Imp  DOSREALLOCSEG        (DOSCALLS.38)
+ 0000:0000  Imp  DOSSETVEC            (DOSCALLS.89)
+ 0000:0000  Imp  DOSWRITE             (DOSCALLS.138)
+ 0002:0178       STKHQQ
+ 0000:0000  Imp  VIOREGISTER          (VIOCALLS.VIOREGISTER)
+ 0000:0000  Imp  VIOWRTTTY            (VIOCALLS.VIOWRTTTY)
+ 0002:02E8       _edata
+ 0002:02F0       _end
+ 0002:01BB       _environ
+ 0002:0182       _errno
+ 0001:01D3       _exit
+ 0001:0000       _main
+ 0002:0174       __aaltstkovr
+ 0002:0164       __abrkp
+ 0002:0064       __abrktb
+ 0002:0164       __abrktbe
+ 0002:0166       __acfinfo
+ 0002:005A       __acmdln
+ 0000:9876  Abs  __acrtmsg
+ 0000:9876  Abs  __acrtused
+ 0002:01C6       __adbgmsg
+ 0002:005C       __aenvseg
+ 0002:0062       __aexit_rtn
+ 0001:00AA       __amsg_exit
+ 0002:005E       __asizds
+ 0001:003C       __astart
+ 0002:0060       __atopsp
+ 0002:01C3       __child
+ 0001:012E       __chkstk
+ 0001:0152       __cinit
+ 0001:00A0       __cintDIV
+ 0001:0230       __ctermsub
+ 0002:0189       __doserrno
+ 0002:0188       __dosmode
+ 0002:0186       __dosvermajor
+ 0002:0187       __dosverminor
+ 0001:01EA       __exit
+ 0002:017A       __fac
+ 0001:0252       __FF_MSGBANNER
+ 0002:01D6       __fpinit
+ 0001:0516       __fptrap
+ 0002:018B       __nfile
+ 0001:04B0       __NMSG_TEXT
+ 0001:04E0       __NMSG_WRITE
+ 0001:0276       __nullcheck
+ 0002:0189       __oserr
+ 0002:018D       __osfile
+ 0002:0186       __osmajor
+ 0002:0187       __osminor
+ 0002:0188       __osmode
+ 0002:0186       __osversion
+ 0002:01BF       __pgmptr
+ 0002:01A1       __pipe
+ 0001:029C       __setargv
+ 0001:0424       __setenvp
+ 0001:051C       __stdalloc
+ 0002:0184       __umaskval
+ 0002:01B5       ___argc
+ 0002:01B7       ___argv
+
+  Address         Publics by Value
+
+ 0000:0000  Imp  DOSCLOSE             (DOSCALLS.59)
+ 0000:0000  Imp  DOSREALLOCSEG        (DOSCALLS.38)
+ 0000:0000  Imp  DOSGETVERSION        (DOSCALLS.92)
+ 0000:0000  Imp  DOSWRITE             (DOSCALLS.138)
+ 0000:0000  Imp  VIOREGISTER          (VIOCALLS.VIOREGISTER)
+ 0000:0000  Imp  DOSEXIT              (DOSCALLS.5)
+ 0000:0000  Imp  DOSGETMACHINEMODE    (DOSCALLS.49)
+ 0000:0000  Imp  VIOWRTTTY            (VIOCALLS.VIOWRTTTY)
+ 0000:0000  Imp  DOSSETVEC            (DOSCALLS.89)
+ 0000:0000  Imp  DOSQHANDTYPE         (DOSCALLS.77)
+ 0000:9876  Abs  __acrtmsg
+ 0000:9876  Abs  __acrtused
+ 0001:0000       _main
+ 0001:003C       __astart
+ 0001:00A0       __cintDIV
+ 0001:00AA       __amsg_exit
+ 0001:012E       __chkstk
+ 0001:0152       __cinit
+ 0001:01D3       _exit
+ 0001:01EA       __exit
+ 0001:0230       __ctermsub
+ 0001:0252       __FF_MSGBANNER
+ 0001:0276       __nullcheck
+ 0001:029C       __setargv
+ 0001:0424       __setenvp
+ 0001:04B0       __NMSG_TEXT
+ 0001:04E0       __NMSG_WRITE
+ 0001:0516       __fptrap
+ 0001:051C       __stdalloc
+ 0002:005A       __acmdln
+ 0002:005C       __aenvseg
+ 0002:005E       __asizds
+ 0002:0060       __atopsp
+ 0002:0062       __aexit_rtn
+ 0002:0064       __abrktb
+ 0002:0164       __abrkp
+ 0002:0164       __abrktbe
+ 0002:0166       __acfinfo
+ 0002:0174       __aaltstkovr
+ 0002:0178       STKHQQ
+ 0002:017A       __fac
+ 0002:0182       _errno
+ 0002:0184       __umaskval
+ 0002:0186       __osversion
+ 0002:0186       __dosvermajor
+ 0002:0186       __osmajor
+ 0002:0187       __osminor
+ 0002:0187       __dosverminor
+ 0002:0188       __osmode
+ 0002:0188       __dosmode
+ 0002:0189       __doserrno
+ 0002:0189       __oserr
+ 0002:018B       __nfile
+ 0002:018D       __osfile
+ 0002:01A1       __pipe
+ 0002:01B5       ___argc
+ 0002:01B7       ___argv
+ 0002:01BB       _environ
+ 0002:01BF       __pgmptr
+ 0002:01C3       __child
+ 0002:01C6       __adbgmsg
+ 0002:01D6       __fpinit
+ 0002:02E8       _edata
+ 0002:02F0       _end
+
+Program entry point at 0001:003C

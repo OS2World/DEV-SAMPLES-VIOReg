@@ -1,0 +1,37 @@
+
+
+ TEST
+
+ Start     Length     Name                   Class
+ 0001:0000 0009EH     TEST_TEXT              CODE
+ 0002:0000 00011H     _DATA                  DATA
+ 0002:0012 00000H     CONST                  CONST
+ 0002:0012 00000H     _BSS                   BSS
+ 0003:0000 003D6H     $$TYPES                DEBTYP
+ 0004:0000 000EEH     $$SYMBOLS              DEBSYM
+ 0005:0000 00001H      SRCLINES              DEBSRC
+
+ Origin   Group
+ 0002:0   DGROUP
+
+ Address   Export                  Alias
+
+ 0001:0025 _VIDEOROUTER            _VIDEOROUTER
+
+  Address         Publics by Name
+
+ 0000:0000  Imp  DOSBEEP              (DOSCALLS.50)
+ 0000:0000  Imp  DOSWRITE             (DOSCALLS.138)
+ 0001:0000       VIOPRTSC
+ 0001:0025       _VIDEOROUTER
+ 0001:007E       __acrtused
+ 0001:008B       __astart
+
+  Address         Publics by Value
+
+ 0000:0000  Imp  DOSBEEP              (DOSCALLS.50)
+ 0000:0000  Imp  DOSWRITE             (DOSCALLS.138)
+ 0001:0000       VIOPRTSC
+ 0001:0025       _VIDEOROUTER
+ 0001:007E       __acrtused
+ 0001:008B       __astart

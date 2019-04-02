@@ -1,0 +1,9 @@
+LIBRARY       test
+
+DESCRIPTION     'Test for VioRegister'
+
+EXPORTS
+//        VIOPRTSC  @1
+//        VIOWRTTTY @2
+          VIDEOROUTER @3
+

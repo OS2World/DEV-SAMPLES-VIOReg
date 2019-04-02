@@ -1,0 +1,7 @@
+LIBRARY       test
+
+DESCRIPTION     'Test for VioRegister'
+
+EXPORTS
+          _VIDEOROUTER @3
+
